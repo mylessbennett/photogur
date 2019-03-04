@@ -1,0 +1,17 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Pictures</title>
+</head>
+<body>
+  <ul>
+    {% for picture in pictures%}
+
+    <li>
+      <img src="{{picture.url}}" alt="art">
+      <p>{{picture.title}} | {{picture.artist}}</p>
+    </li>
+    {% endfor %}
+  </ul>
+</body>
+</html>
