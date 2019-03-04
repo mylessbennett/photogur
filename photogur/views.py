@@ -1,5 +1,5 @@
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from photogur.models import Picture
 
 
@@ -10,7 +10,7 @@ def pictures(request):
 
 
 def picture_show(request, id):
-    picture = Picture.objects.get(pk=id)
+    picture = get_object_or_404(Picture, pk=id)
     context = {'picture': picture}
     response = render(request, 'picture.html', context)
     return HttpResponse(response)
