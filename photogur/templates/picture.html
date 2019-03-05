@@ -1,13 +1,13 @@
 {% extends 'base.html' %}
 {% block content %}
-<h2>{{picture.title}}</h2>
-<h3>By {{picture.artist}}</h3>
+  <h2>{{picture.title}}</h2>
+  <h3>By {{picture.artist}}</h3>
 
-<img src="{{picture.url}}" alt="{{picture.title}}">
-<ul>
-  <p>Comments:</p>
-  {% for comment in picture.comments.all %}
-  <li>{{comment.name}}: {{comment.message}}</li>
-  {% endfor %}
-</ul>
+  <img src="{{picture.url}}" alt="{{picture.title}}">
+  <ul>
+    <p>Comments:</p>
+    {% for comment in picture.comments.all %}
+    <li>{{comment.name}}: {{comment.message}}</li>
+    {% endfor %}
+  </ul>
 {% endblock %}

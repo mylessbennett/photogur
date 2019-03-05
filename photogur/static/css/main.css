@@ -1,0 +1,46 @@
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  font-family: 'Roboto', sans-serif;
+  color: #A9A9A9;
+
+}
+
+img {
+  height: 300px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+footer {
+  background-color: #2F4F4F;
+  color: white;
+  text-align: center;
+  padding: 5px 0;
+}
+
+.image_box {
+  border: 1px solid lightgrey;
+  padding: 5px;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 0.5em;
+  margin-bottom: 10px;
+}
+
+@media (min-width: 500px) {
+  .gallery {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 900px) {
+  .gallery {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}

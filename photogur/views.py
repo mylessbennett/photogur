@@ -1,11 +1,15 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
 from photogur.models import Picture
 
 
-def pictures(request):
+def root(request):
+    return HttpResponseRedirect('home')
+
+
+def home(request):
     context = {'pictures': Picture.objects.all()}
-    response = render(request, 'pictures.html', context)
+    response = render(request, 'index.html', context)
     return HttpResponse(response)
 
 
