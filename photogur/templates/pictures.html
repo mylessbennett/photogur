@@ -4,8 +4,8 @@
   {% for picture in pictures %}
   <a href="{% url 'picture_details' id=picture.pk%}">
     <li>
-      <h1>{{picture.title}}</h1>
-      <h2>{{picture.artist}}</h2>
+      <h2>{{picture.title}}</h2>
+      <h3>{{picture.artist}}</h3>
       <img src="{{picture.url}}" alt="art">
       <p>Comments: {{picture.comments.count}}</p>
     </li>
