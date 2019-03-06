@@ -4,10 +4,27 @@
   <h3>By {{picture.artist}}</h3>
 
   <img src="{{picture.url}}" alt="{{picture.title}}">
+
+  <form class="" action=" {% url 'create_comment' %} " method="post">
+    {% csrf_token %}
+
+    <label for="comment_message">Comment: </label>
+    <textarea name="message" id="comment_message" rows="8" cols="80" placeholder="Add a comment..."></textarea>
+
+    <input type="hidden" name="picture_id" value="{{ picture.pk }}">
+
+    <input type="text" name="name" value="" placeholder="Enter your name...">
+
+    <button type="submit">
+      <span>Submit</span>
+    </button>
+  </form>
+
   <ul>
     <p>Comments:</p>
     {% for comment in picture.comments.all %}
     <li>{{comment.name}}: {{comment.message}}</li>
     {% endfor %}
   </ul>
+
 {% endblock %}
