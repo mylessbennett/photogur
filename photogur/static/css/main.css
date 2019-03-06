@@ -8,7 +8,7 @@ h1 {
 
 }
 
-img {
+.image_small {
   height: 300px;
   width: 100%;
   margin: 0 auto;
@@ -19,6 +19,9 @@ footer {
   color: white;
   text-align: center;
   padding: 5px 0;
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .image_box {

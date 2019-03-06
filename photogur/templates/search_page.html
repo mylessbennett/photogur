@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+  <main>
+    <p>Search Results: <span>{{ pictures.count }}</span></p>
+  {% for picture in pictures %}
+    <a href="{% url 'picture_details' id=picture.pk %}">
+      <article class="">
+        <img src="{{picture.url}}" alt="{{picture.title}}">
+        <p>{{picture.title}} by {{picture.artist}}</p>
+      </article>
+    </a>
+  {% endfor %}
+  </main>
+{% endblock%}
