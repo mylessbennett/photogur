@@ -20,6 +20,10 @@
     </button>
   </form>
 
+  {% if request.user.is_authenticated %}
+    <p><a href="{% url 'edit' picture.id %}">Edit</a></p>
+  {% endif %}
+
   <ul>
     <p>Comments:</p>
     {% for comment in picture.comments.all %}
