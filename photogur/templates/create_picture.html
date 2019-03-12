@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+  <form action="{% url 'create_picture' %}" method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit" name="button">Post Picture</button>
+  </form>
+
+{% endblock %}

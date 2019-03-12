@@ -17,6 +17,7 @@
         {% else %}
           <li><a href="{% url 'login' %}">Log In</a></li>
         {% endif %}
+          <li><a href="{% url 'create_picture' %}">Add Picture</a></li>
       </ul>
       <form action="{% url 'picture_search' %}" method="get">
         <label for="picture_search">
