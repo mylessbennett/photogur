@@ -4,6 +4,7 @@ from photogur.models import Picture, Comment
 from photogur.forms import LoginForm, PictureForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.decorators import login_required
 
 
 def root(request):
@@ -85,6 +86,7 @@ def signup(request):
     return HttpResponse(html_response)
 
 
+@login_required
 def picture_create(request):
     if request.method == 'POST':
         form = PictureForm(request.POST)
