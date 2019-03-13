@@ -11,23 +11,25 @@
   <body>
     <header>
       <a href="{% url 'home_page' %}"><h1>Photogur</h1></a>
-      <ul>
-        {% if request.user.is_authenticated %}
-          <li>Logged in as {{request.user.username}}</li>
-          <li><a href="{% url 'logout' %}">Log Out</a></li>
-        {% else %}
-          <li><a href="{% url 'signup' %}">Sign Up</a></li>
-          <li><a href="{% url 'login' %}">Log In</a></li>
-        {% endif %}
-          <li><a href="{% url 'create_picture' %}">Add Picture</a></li>
-      </ul>
-      <form action="{% url 'picture_search' %}" method="get">
-        <label for="picture_search">
-          <span>Search:</span>
-          <input type="search" id="picture_search" name="query" value={{ query }} >
-        </label>
-        <input type="submit" name="" value="search">
-      </form>
+      <nav class="site_nav">
+        <ul class="nav_links">
+          {% if request.user.is_authenticated %}
+            <li>Logged in as {{request.user.username}}</li>
+            <li><a href="{% url 'logout' %}">Log Out</a></li>
+          {% else %}
+            <li><a href="{% url 'signup' %}">Sign Up</a></li>
+            <li><a href="{% url 'login' %}">Log In</a></li>
+          {% endif %}
+            <li><a href="{% url 'create_picture' %}">Add Picture</a></li>
+        </ul>
+        <form action="{% url 'picture_search' %}" method="get">
+          <label for="picture_search">
+            <span>Search:</span>
+            <input type="search" id="picture_search" name="query" value={{ query }} >
+          </label>
+          <input type="submit" name="" value="search">
+        </form>
+      </nav>
     </header>
 
       {% block content %}

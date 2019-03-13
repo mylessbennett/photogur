@@ -2,10 +2,30 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: blanchedalmond;
+  margin: 0;
+}
+
 h1 {
   font-family: 'Roboto', sans-serif;
-  color: #A9A9A9;
+  color: white;
+  margin: 0px;
+}
 
+a {
+  text-decoration: none;
+}
+
+header {
+  background-color: #2F4F4F;
+  padding: 10px;
+}
+
+.nav_links li {
+  display: inline-block;
+  float: right;
+  padding: 0 30px;
 }
 
 .image_small {
